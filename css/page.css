@@ -1,0 +1,94 @@
+body {
+	background-color: rgb(230, 230, 230);
+	font-family: Sans-serif;
+	font-size: 18px;
+	margin: 0px;
+}
+
+header {
+	background-color: rgb(220, 30, 30);
+	padding: 15px;
+}
+
+main {
+	margin-left: 40px;
+}
+
+h1 {
+	font-size: 60px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+hr {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+li {
+	padding-bottom: 15px;
+}
+
+footer {
+	background-color: rgb(100, 100, 255);
+	padding: 10px;
+	font-size: 20px;
+	color: rgb(255, 255, 255);
+}
+
+textarea {
+	margin-top: 20px;
+}
+
+table {
+	margin: 30px;
+}
+
+td{
+	padding:5px;
+}
+
+img {
+    display: block;
+    width: 50%;
+    height: auto;
+}
+
+nav a {
+    display: inline;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #dddddd;
+    font-size: 25px;
+    font-style: ;
+}
+
+a:link {
+    color: purple; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+    text-decoration: underline;
+}
+
+#drag {
+	width: 250px;
+	height: 75px;
+	margin: 20px;
+}
