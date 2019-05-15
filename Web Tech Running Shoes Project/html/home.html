@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/page.css">
+
+	<script>
+	function allowDrop(ev) {
+	    ev.preventDefault();
+	}
+
+	function drag(ev) {
+	    ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+	    ev.preventDefault();
+	    var data = ev.dataTransfer.getData("text");
+	    ev.target.appendChild(document.getElementById(data));
+	}
+	</script>
+
+	<style>
+	#div1 {
+		float: left;
+	    width: 350px;
+	    height: 100px;
+	    padding: 10px;
+	    border: 2px solid #aaaaaa;
+	}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>Home</h1>
+		<nav>
+			<a href="home.html">Home</a>
+			<a href="training.html">Training Shoes</a>
+			<a href="spikes.html">Racing Spikes</a>
+		</nav>
+	</header>
+
+	<main>
+		<h2>Where to Buy</h2>
+		<p>There are many options when it comes to buying running shoes, but it is important to go into a 
+		store when buying for the first time to truly test out the shoes and see what you need.
+		<br>
+		<br>
+		<button onclick="getLocation()">Get Location</button>
+
+		<div id="mapholder"></div>
+
+		<script>
+		var x = document.getElementById("demo");
+
+		function getLocation() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(showPosition, showError);
+		    } else {
+		        x.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}
+
+		function showPosition(position) {
+		    var latlon = position.coords.latitude + "," + position.coords.longitude;
+		    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+		    +latlon+"&zoom=14&size=400x300&key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU";
+		    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+		}
+		//To use this code on your website, get a free API key from Google.
+		//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+
+		function showError(error) {
+		    switch(error.code) {
+		        case error.PERMISSION_DENIED:
+		            x.innerHTML = "User denied the request for Geolocation."
+		            break;
+		        case error.POSITION_UNAVAILABLE:
+		            x.innerHTML = "Location information is unavailable."
+		            break;
+		        case error.TIMEOUT:
+		            x.innerHTML = "The request to get user location timed out."
+		            break;
+		        case error.UNKNOWN_ERROR:
+		            x.innerHTML = "An unknown error occurred."
+		            break;
+		    }
+		}
+		</script>
+
+		<h2>Rank These Brands from Your Favorite to Least Favorite?</h2>
+
+		<img id="drag" src="../res/nike_logo.png" draggable="true"
+		ondragstart="drag(event)" width="336" height="69">
+		
+		<img id="drag" src="../res/brooks_logo.png" draggable="true"
+		ondragstart="drag(event)" width="336" height="69">
+
+		<img id="drag" src="../res/adidas_logo.png" draggable="true"
+		ondragstart="drag(event)" width="336" height="69">
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		<br>
+		<br>
+		<br><br><br><br><br><br><br><br><br>
+		</div>
+	</main>
+
+	<footer>
+		<textarea cols="150" rows="3">Ask us a question?</textarea>
+		<h4>Contact Me</h4>
+		<ul>
+			<li>Zach Shaffer</li>
+			<li>Email: zshaffer01@gmail.com</li>
+			<li>Cellphone: 703-225-6765</li>
+			<li>Mailing Address: 14658 Gap Way, Haymarket, VA 20169</li>
+		</ul>
+	</footer>
+</body>
+
+</html>
